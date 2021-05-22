@@ -28,7 +28,7 @@ data = pd.read_csv(fp,skiprows=2, delim_whitespace=True, na_values=['-9999'])
 
 tavg_nodata_count = None
 #YOUR CODE HERE 2
-
+tavg_nodata_count=data[data["TAVG"]=="NaN"].count()
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
