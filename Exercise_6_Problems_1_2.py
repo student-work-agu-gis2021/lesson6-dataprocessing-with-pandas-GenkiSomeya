@@ -56,7 +56,8 @@ print('Number of no-data values in column "TMIN":', tmin_nodata_count)
 
 day_count = None 
 #YOUR CODE HERE 4
-
+data['DATE']=data['19520101']
+day_count=len(data.loc[:,'DATE'])
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
 print("Number of days:", day_count)
@@ -69,7 +70,7 @@ print("Number of days:", day_count)
 first_obs = None
  
 # YOUR CODE HERE 5
-
+first_obs=data.loc[:,'DATE'].min()
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
 print('Date of the first observation:',first_obs)
@@ -81,7 +82,7 @@ print('Date of the first observation:',first_obs)
 last_obs = None
 
 # YOUR CODE HERE 6
-
+last_obs=data.loc[:,'DATE'].max()
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
 print('Date of the last observation:', last_obs)
@@ -94,7 +95,7 @@ print('Date of the last observation:', last_obs)
 avg_temp = None
 
 # YOUR CODE HERE 7
-
+avg_temp=data.loc[:,'TAVG'].mean()
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
 print('Average temperature (F) for the whole dataset:', round(avg_temp, 2))
@@ -107,6 +108,8 @@ print('Average temperature (F) for the whole dataset:', round(avg_temp, 2))
 avg_temp_1969 = None
 
 # YOUR CODE HERE 8
+DATE='19520101'
+avg_temp_1969 = data[data.DATE > 19690500 and data.DATE < 19691100].loc[:,'TAVG'].mean()
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # This test print should print a number
