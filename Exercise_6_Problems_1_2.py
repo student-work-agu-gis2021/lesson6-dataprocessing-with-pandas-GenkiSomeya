@@ -30,7 +30,7 @@ data = pd.read_csv(fp,skiprows=2, delim_whitespace=True, na_values=['-9999'])
 tavg_nodata_count = None
 #YOUR CODE HERE 2
 data['TAVG']=data['37']
-tavg_nodata_count= data.loc[:,'TAVG'].isnull().sum()
+tavg_nodata_count = data.loc[:,'TAVG'].isnull().sum()
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
@@ -43,7 +43,8 @@ print('Number of no-data values in column "TAVG":',tavg_nodata_count)
 
 tmin_nodata_count = None
 #YOUR CODE HERE 3
-
+data['TMIN']=data['34']
+tmin_nodata_count = data.loc[:,'TMIN'].isnull().sum()
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
 print('Number of no-data values in column "TMIN":', tmin_nodata_count)
