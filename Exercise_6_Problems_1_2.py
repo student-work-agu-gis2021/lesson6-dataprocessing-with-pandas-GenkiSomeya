@@ -19,6 +19,7 @@ data = None
 # YOUR CODE HERE 1
 fp = r'data/1091402.txt'
 data = pd.read_csv(fp,skiprows=2, delim_whitespace=True, na_values=['-9999'])
+
 # ### Part 2 
 # 
 # In this section, you will calculate simple statistics based on the input data:
@@ -28,7 +29,8 @@ data = pd.read_csv(fp,skiprows=2, delim_whitespace=True, na_values=['-9999'])
 
 tavg_nodata_count = None
 #YOUR CODE HERE 2
-tavg_nodata_count=data[data["TAVG"]=="NaN"].count()
+data['TAVG']=data['37']
+tavg_nodata_count= data.loc[:,'TAVG'].isnull().sum()
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # Print out the solution:
