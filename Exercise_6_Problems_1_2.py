@@ -108,8 +108,8 @@ print('Average temperature (F) for the whole dataset:', round(avg_temp, 2))
 avg_temp_1969 = None
 
 # YOUR CODE HERE 8
-DATE='19520101'
-avg_temp_1969 = data[data.DATE > 19690500 and data.DATE < 19691100].loc[:,'TAVG'].mean()
+data['TMAX']=data['39']
+avg_temp_1969 = data[(data['DATE']>19690500) & (data['DATE']<19690900)].loc[:,'TMAX'].mean()
 
 #CAUTION!!! DON'T EDIT THIS PART START
 # This test print should print a number
